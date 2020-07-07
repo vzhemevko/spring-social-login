@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Spring Social Login Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+<p/>
+<div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h3>Login with:</h3>
+        <div class="list-group">
+            <p th:each="url : ${urls}">
+                <a th:text="${url.key}" th:href="${url.value}" class="list-group-item active">Client</a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</body>
+</html>

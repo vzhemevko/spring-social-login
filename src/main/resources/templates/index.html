@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3>Hello <span th:text="${user_name}"/>!</h3>
+            <p/>
+            <a href="/login?logout" class="list-group-item active">Logout</a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</html>

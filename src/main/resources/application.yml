@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: <FACEBOOK APP ID>
+            client-secret: <FACEBOOK APP SECRET>
+          github:
+            client-id: <GITHUB APP ID>
+            client-secret: <FACEBOOK APP SECRET>
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+logging:
+  level:
+    org:
+      springframework:
+          INFO
