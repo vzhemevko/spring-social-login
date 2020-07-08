@@ -34,8 +34,7 @@ OAuth2 identity providers, such as Facebook, GitHub, Google, and others.
 ```
 - installed - Git
 - installed  - Java 11 
-- OAuth2 Client or App ID and Secret from the identity provideryou are going to use for login. 
-For example GitHub
+- OAuth2 Client or App ID and Secret from the identity provideryou are going to use for login. For example GitHub.
 ```
 
 #### Creating OAuth2 identity provider app 
@@ -55,7 +54,6 @@ After cloning the repository navigate to the root directory and build the projec
 ```
 cd spring-social-login
 gradlew build
-
 ```
 
 Go to `src/main/resources/application.yml` and update you app GitHub ID and secret
