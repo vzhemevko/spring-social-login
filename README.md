@@ -1,6 +1,7 @@
 ## Spring Social Login
 
-  * [What is Spring Social Login](#what-is-todomessage)
+  * [What is Spring Social Login](#what-is-spring-social-login)
+  * [Demo](#demo)
   * [Getting Started](#getting-started)
     + [Prerequisites](#prerequisites)
     + [Creating OAuth2 identity provider app ](#creating-oauth2-identity-provider-app)
@@ -9,7 +10,7 @@
   * [Authors](#authors)
   * [License](#license)
   * [Built With](#built-with)
-  * [Demo](#demo)
+
      
 ------------
 
@@ -20,6 +21,12 @@ OAuth2 identity providers, such as Facebook, GitHub, Google, and others.
 
 ------------
 
+### Demo
+
+![alt text](https://github.com/vzhemevko/spring-social-login/blob/master/demo/github-login.gif?raw=true)
+
+------------
+
 ### Getting Started
 
 #### Prerequisites
@@ -27,7 +34,8 @@ OAuth2 identity providers, such as Facebook, GitHub, Google, and others.
 ```
 - installed - Git
 - installed  - Java 11 
-- OAuth2 Client or App ID and Secret from the identity provider you are going to use for login. For example GitHub
+- OAuth2 Client or App ID and Secret from the identity provideryou are going to use for login. 
+For example GitHub
 ```
 
 #### Creating OAuth2 identity provider app 
@@ -38,11 +46,16 @@ Go to https://github.com/settings/apps to create a new app and get Client ID and
 
 #### Start the application
 
-After cloning the repository navigate to the root directory and build the project. 
+Clone the repository
+
+`git clone https://github.com/vzhemevko/spring-social-login.git`
+
+After cloning the repository navigate to the root directory and build the project 
 
 ```
 cd spring-social-login
 gradlew build
+
 ```
 
 Go to `src/main/resources/application.yml` and update you app GitHub ID and secret
@@ -89,9 +102,4 @@ This project is licensed under the MIT License
 * [Thymeleaf](https://github.com/thymeleaf) 
 * [Bootstrap](https://getbootstrap.com/) 
 
-------------
-
-### Demo
-
-//TODO
 ------------
