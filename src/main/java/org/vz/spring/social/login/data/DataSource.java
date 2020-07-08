@@ -8,9 +8,9 @@ import java.util.Map;
 
 @Component
 public class DataSource {
-    // Normally the data would be stored in a database or some other datasource
-    // This project is aimed to demonstrate  how to implement Spring social login
-    // Therefore the data is kept in memory.
+    // Normally the data would be stored in a database or some other datasource.
+    // This project is aimed to demonstrate  how to implement Spring social login,
+    // therefore for the sake of simplicity, the data is kept in memory.
     private Map<String, User> userRepo = new HashMap<>();
     
     public User findUserByEmail(String email) {

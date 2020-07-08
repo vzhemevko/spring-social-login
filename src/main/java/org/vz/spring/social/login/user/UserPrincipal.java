@@ -11,12 +11,14 @@ public class UserPrincipal implements OAuth2User, UserDetails {
     
     private String name;
     private String email;
+    private String imageUrl;
     private Collection<? extends GrantedAuthority> authorities;
     private Map<String, Object> attributes;
     
     public UserPrincipal(User user, OAuth2User oAuth2User) {
         this.email = user.getEmail();
         this.name = user.getName();
+        this.imageUrl = user.getImageUrl();
         this.authorities = oAuth2User.getAuthorities();
         this.attributes = oAuth2User.getAttributes();
     }
@@ -34,6 +36,10 @@ public class UserPrincipal implements OAuth2User, UserDetails {
     @Override
     public String getName() {
         return name;
+    }
+    
+    public String getImageUrl() {
+        return imageUrl;
     }
     
     @Override

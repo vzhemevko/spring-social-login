@@ -10,7 +10,10 @@ spring:
             client-secret: <FACEBOOK APP SECRET>
           github:
             client-id: <GITHUB APP ID>
-            client-secret: <FACEBOOK APP SECRET>
+            client-secret: <GITHUB APP SECRET>
+          google:
+            client-id: <GOOGLE APP ID>
+            client-secret: <GOOGLE APP SECRET>
   thymeleaf:
     cache: false
     prefix: file:src/main/resources/templates/

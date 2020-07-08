@@ -1,3 +1,49 @@
+        :root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem
+}
+
 body {
-  padding: 10px;
+    background: linear-gradient(to right, #0a346d, #1598ef)
+}
+form {
+   margin: 1rem
+}
+
+.card-signin {
+    border: 0;
+    border-radius: 0rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1)
+}
+
+.card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem
+}
+
+.card-signin .card-body {
+    padding: 2rem
+}
+
+.btn-google {
+    color: white;
+    background-color: #ea4335
+}
+
+.btn-facebook {
+    color: white;
+    background-color: #3b5998
+}
+
+.btn-github {
+    color: white;
+    background-color: #333333
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }

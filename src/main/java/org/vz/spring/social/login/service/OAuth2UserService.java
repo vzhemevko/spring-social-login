@@ -11,6 +11,7 @@ import org.vz.spring.social.login.user.OAuth2UserInfo;
 import org.vz.spring.social.login.user.User;
 import org.vz.spring.social.login.user.UserPrincipal;
 
+import static org.vz.spring.social.login.config.OAuth2Provider.*;
 import static org.vz.spring.social.login.user.OAuth2UserInfoFactory.*;
 
 @Service
@@ -55,7 +56,8 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
         User user = new User();
         user.setName(oAuth2UserInfo.getName());
         user.setEmail(oAuth2UserInfo.getEmail());
-        user.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
+        user.setImageUrl(oAuth2UserInfo.getImageUrl());
+        user.setProvider(valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
         user.setAuthorities(oAuth2User.getAuthorities());
         
         return dataSource.saveUserByEmail(user.getEmail(), user);
@@ -67,13 +69,13 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
         verifyProvider(existingUser, oAuth2UserRequest);
         existingUser.setName(oAuth2UserInfo.getName());
         existingUser.setEmail(oAuth2UserInfo.getEmail());
+        existingUser.setImageUrl(existingUser.getImageUrl());
     
         return dataSource.saveUserByEmail(existingUser.getEmail(), existingUser);
     }
     
     private void verifyProvider(User user, OAuth2UserRequest oAuth2UserRequest) {
-        if (!user.getProvider().equals(
-            AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))) {
+        if (!user.getProvider().equals(valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))) {
             throw new RuntimeException(
                 "You're signed up with "  + user.getProvider() + " account. " +
                 "Please use your " + user.getProvider() + " account to login."
