@@ -16,12 +16,14 @@
 
 ### What is Spring Social Login
 
-Spring Social Login is a demo application of how to build authentication and authorization to your application based on 
+Spring Social Login is a demo application of how to build authentication and authorization into your Spring Boot application based on 
 OAuth2 identity providers, such as Facebook, GitHub, Google, and others.
 
 ------------
 
 ### Demo
+
+[Direct link](https://github.com/vzhemevko/spring-social-login/blob/master/demo/github-login.gif?raw=true)
 
 ![alt text](https://github.com/vzhemevko/spring-social-login/blob/master/demo/github-login.gif?raw=true)
 
@@ -31,17 +33,20 @@ OAuth2 identity providers, such as Facebook, GitHub, Google, and others.
 
 #### Prerequisites
 
-```
-- installed - Git
-- installed  - Java 11 
-- OAuth2 Client or App ID and Secret from the identity provideryou are going to use for login. For example GitHub.
-```
+
+* installed - Git
+* installed  - Java 11 
+* OAuth2 Client or App ID and Secret from the OAuth2 identity provider you are going to use for login. For example GitHub.
+
 
 #### Creating OAuth2 identity provider app 
 
 Let's take GitHub as a demo identity provider
 
-Go to https://github.com/settings/apps to create a new app and get Client ID and Client secret after creation 
+Go to https://github.com/settings/apps to create a new app and get Client ID and Client secret after creation. 
+
+It's also important to provide "User authorization callback URL" during app creation, so that GitHub will redirect to our application after a user authorizes.
+For the demo purposes set it to `http://localhost:8080/login/oauth2/code/github`
 
 #### Start the application
 
@@ -49,19 +54,19 @@ Clone the repository
 
 `git clone https://github.com/vzhemevko/spring-social-login.git`
 
-After cloning the repository navigate to the root directory and build the project 
+After cloning the repository go to `src/main/resources/application.yml` and update you app GitHub ID and secret
 
-```
-cd spring-social-login
-gradlew build
-```
-
-Go to `src/main/resources/application.yml` and update you app GitHub ID and secret
- 
 ``` 
 github:
     client-id: <GITHUB APP ID>
     client-secret: <GITHUB APP SECRET>
+```
+
+Navigate to the root directory and build the project form the command line (alternatively, you can do it form IDE) 
+
+```
+cd spring-social-login
+gradlew build
 ```
 
 Then you could run Spring Boot form the command line 
